@@ -162,19 +162,21 @@ cTemp = (fTemp - 32)/1.8;
 % Store your results with variable names vecA, vecB and vecC respectively.
 vecA = [ 2:3:4:5:6:7]
 vecB = [1.1000:1.3000:1.5000:1.7000]
+vecC = [8:6:4:2]
 
 
 
 % 20. Give a MATLAB expression that would create a vector 
 % (assigned to a variable called vec) of 50 elements that range, equally spaced, 
 % from 0 to 2pi. 
-
+vec = linspace(0, 2*pi, 50);
 
 
 
 % 21. Using the colon operator and the transpose operator, 
 % create a column vector that has the values -1 to 1 in steps of 0.5.
 % Assign your answer to a variable called colVec.
+colVec = ([-1:0.5:1]');
 
 
 
@@ -184,6 +186,9 @@ vecB = [1.1000:1.3000:1.5000:1.7000]
 % inclusive range from 1 to 5. Create a matrix called resultMat of all zeros with the 
 % dimensions given by the values of rows and cols. The resultMat should
 % change each time you execute your code. 
+rows = randi([1, 5]);
+cols = randi([1, 5]);
+resultMat = zeros(rows,cols);
 
 
 
@@ -192,18 +197,23 @@ vecB = [1.1000:1.3000:1.5000:1.7000]
 % from -10 to 10 assigned to a variable named originalVec. Perform each of 
 % the following on the original vector and store your results in appropriately 
 % named variables. (you should have a seperate line of code for each)
+originalVec = randi([-10, 10], 1, 5);
 
 % - subtract 3 from each element
+origianlVecminus3 = (originalVec - 3);
 
 
 % - count how many are positive
+countPos = sum(originalVec > 0);
 
 
 % - get the absolute value of each element
+absoVal = abs(originalVec);
 
 
 
 % - find the maximum.
+origMax = max(originalVec);
 
 
 
@@ -211,6 +221,10 @@ vecB = [1.1000:1.3000:1.5000:1.7000]
 % variables for base1, base2, and height and assign them values. Store the
 % result of your calculation in a variable called trapArea. Comment your
 % code so that another user can understand what your code does. 
+base1 = 2
+base2 = 3
+height = 3
+trapArea = ((base1 + base2)/2 *height); % This code calculates the area of a trapozoid by adding the values of base 1 and two dividing that sum by 2 and then multiplying by height.
 
 
 
@@ -225,7 +239,10 @@ vecB = [1.1000:1.3000:1.5000:1.7000]
 % Write some code that prompts the user to input total revenues and total 
 % costs and then calculates the ROI and stores the value in a variable called
 % ROI.
-
+totRev = input("total revenue");
+totCos = input("total cost");
+ROI = (totRev - totCos)/ totcos*100;
+fprintf('Return on Investment (ROI): %.2f%%\n', ROI);
 
 
 
@@ -240,6 +257,9 @@ vecB = [1.1000:1.3000:1.5000:1.7000]
 % part 2, make sure you click the Run Section button vs the Run button) 
 
 %%% Enter the code for your program below this line
+disp('hello world');
+txt = input("type here", "s");
+disp(['you typed:', txt]);
 
 
 
